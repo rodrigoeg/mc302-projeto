@@ -3,7 +3,6 @@ package pt.c02foundations.frango;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 import anima.annotation.Component;
 import anima.component.base.ComponentBase;
 
@@ -12,19 +11,19 @@ import anima.component.base.ComponentBase;
  * @author mbertanha
  *
  */
-@Component(id="<http://purl.org/dcc/[package].HashPerguntas>",
-           provides={"<http://purl.org/dcc/[package].IHashPerguntas>"})
-class HashPerguntas extends ComponentBase implements IHashPerguntas{
+@Component(id="<http://purl.org/dcc/pt.c02foundations.frango.QuestionsHash>",
+           provides={"<http://purl.org/dcc/pt.c02foundations.frango.IQuestionsHash>"})
+class QuestionsHash extends ComponentBase implements IQuestionsHash{
     private HashMap<String, List<String>> hash;
 	private List<String> questions;
 	private int numberOfQuestions;
     
-    HashPerguntas(){
+    QuestionsHash(){
     	questions = new ArrayList<String>();
     	hash = new HashMap<String, List<String>>();
         numberOfQuestions = 0;
     }
-   
+    
 	public List<String> getAnimals(String question){
 		return hash.get(question);
 	}
@@ -67,5 +66,9 @@ class HashPerguntas extends ComponentBase implements IHashPerguntas{
 	
 	public int getNumberOfQuestions(){
 		return numberOfQuestions;
+	}
+	
+	public String[] getArrayAnimals(String question){
+		return (String[])getAnimals(question).toArray();
 	}
 }
