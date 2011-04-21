@@ -1,4 +1,4 @@
-package pt.c02foundations.frango;
+package pt.c02foundations.frango.components;
 
 import java.util.List;
 

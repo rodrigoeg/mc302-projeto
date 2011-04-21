@@ -1,4 +1,4 @@
-package pt.c02foundations.frango;
+package pt.c02foundations.frango.components;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,12 +13,12 @@ import anima.component.base.ComponentBase;
  */
 @Component(id="<http://purl.org/dcc/pt.c02foundations.frango.QuestionsHash>",
            provides={"<http://purl.org/dcc/pt.c02foundations.frango.IQuestionsHash>"})
-class QuestionsHash extends ComponentBase implements IQuestionsHash{
+public class QuestionsHash extends ComponentBase implements IQuestionsHash{
     private HashMap<String, List<String>> hash;
 	private List<String> questions;
 	private int numberOfQuestions;
     
-    QuestionsHash(){
+    public QuestionsHash(){
     	questions = new ArrayList<String>();
     	hash = new HashMap<String, List<String>>();
         numberOfQuestions = 0;
