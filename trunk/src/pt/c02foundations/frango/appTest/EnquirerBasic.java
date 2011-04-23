@@ -9,11 +9,14 @@ import pt.c01interfaces.s01chaveid.s01base.inter.IObjetoConhecimento;
 import pt.c01interfaces.s01chaveid.s01base.inter.IResponder;
 
 public class EnquirerBasic implements IEnquirer {
+	
+	//as variaveis são estaticas para cachear os valores para a proxima execução do enquirer
     private static String[] listaNomes;
     private static HashMap<String, IObjetoConhecimento> objs = new HashMap<String, IObjetoConhecimento>();
 
 
     public EnquirerBasic() {
+    	
     }
 
     public void connect(IResponder responder) {
@@ -26,6 +29,7 @@ public class EnquirerBasic implements IEnquirer {
             listaNomes = base.listaNomes();
         }
 
+        //varre toda a lista de animais fazendo todas as pertuntas, e quando encontrar um animal que tenha todas as perguntas
         for (int i = 0; (i < listaNomes.length && animal == null); i++) {
             IObjetoConhecimento obj = objs.get(listaNomes[i]);
             if (obj == null) {

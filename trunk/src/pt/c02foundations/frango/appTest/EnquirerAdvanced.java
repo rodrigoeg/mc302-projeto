@@ -4,142 +4,184 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import anima.factory.IGlobalFactory;
+import anima.factory.context.componentContext.ComponentContextFactory;
+
 import pt.c01interfaces.s01chaveid.s01base.impl.BaseConhecimento;
 import pt.c01interfaces.s01chaveid.s01base.inter.IBaseConhecimento;
 import pt.c01interfaces.s01chaveid.s01base.inter.IDeclaracao;
 import pt.c01interfaces.s01chaveid.s01base.inter.IEnquirer;
 import pt.c01interfaces.s01chaveid.s01base.inter.IObjetoConhecimento;
 import pt.c01interfaces.s01chaveid.s01base.inter.IResponder;
-import pt.c02foundations.frango.components.IQuestionsHash;
-import pt.c02foundations.frango.components.QuestionsHash;
+import pt.c02foundations.frango.IQuestionsHash;
+import pt.c02foundations.frango.QuestionsHash;
 
 public class EnquirerAdvanced implements IEnquirer {
 
-    private IBaseConhecimento baseConhecimento;
-    private static String[] namesList;
-    private static IQuestionsHash negativeAnswers;
-    private static IQuestionsHash positiveAnswers;
-    private static IQuestionsHash dontKnowAnswers;
-    private static List<String> questions = new ArrayList<String>();
-    private static HashMap<String, IResponder> responders = new HashMap<String, IResponder>();
-    private static HashMap<String, IObjetoConhecimento> objs = new HashMap<String, IObjetoConhecimento>();
-    private static Boolean alreadyCached = false;
+	private IBaseConhecimento baseConhecimento;
 
-    public EnquirerAdvanced() {
-        baseConhecimento = new BaseConhecimento();
-        namesList = baseConhecimento.listaNomes();
+	// essas variaveis são estaticas para poder economizar no tempo de execução
+	// quando presivar instanciar varios enquirers
+	private static String[] listaNomes;
+	private static IQuestionsHash hashRespostasSim;
+	private static IQuestionsHash hashRespostasNao;
+	private static IQuestionsHash hashRespostasNaoSei;
+	private static List<String> listaPerguntas = new ArrayList<String>();
+	private static HashMap<String, IResponder> responders = new HashMap<String, IResponder>();
+	private static HashMap<String, IObjetoConhecimento> objs = new HashMap<String, IObjetoConhecimento>();
+	private static Boolean jaCacheado = false;
 
-        if (alreadyCached == false) {
-            negativeAnswers = new QuestionsHash();
-            positiveAnswers = new QuestionsHash();
-            dontKnowAnswers = new QuestionsHash();
-            questions = new ArrayList<String>();
+	public EnquirerAdvanced() {
+		baseConhecimento = new BaseConhecimento();
+		listaNomes = baseConhecimento.listaNomes();
 
-            for (int i = 0; (i < namesList.length); i++) {
-                IObjetoConhecimento obj;
-                obj = baseConhecimento.recuperaObjeto(namesList[i]);
-                objs.put(namesList[i], obj);
+		// so coloca os valores nas variaveis na primeira execução
 
-                IDeclaracao decl = obj.primeira();
+		if (jaCacheado == false) {
 
-                while (decl != null) {
-                    if (!isQuestion(decl.getPropriedade())) {
-                        insertIntoHash(decl.getPropriedade());
-                        addQuestion(decl.getPropriedade());
-                    }
-                    decl = obj.proxima();
-                }
-            }
-        }
+			// aqui é contruido um hash com lista ligadas que quardam os animais
+			// indexados pelas perguntas, sendo que existe um hash para cada
+			// resposta
 
-        alreadyCached = true;
-    }
+			try {
+				// creates a global factory
+				IGlobalFactory factory = ComponentContextFactory
+						.createGlobalFactory();
 
-    public void connect(IResponder responder) {
-        boolean acertei, found = false;
-        String animalName = null;
-        List<String> intersectedAnswers = new ArrayList<String>();
+				factory.registerPrototype(QuestionsHash.class);
 
-        for (int i = 0; ((i < questions.size()) && (!found)); i++) {
-            String resposta = responder.ask((String) questions.get(i));
-            if (resposta.equalsIgnoreCase("nao")) {
-                intersectedAnswers = intersectList((List<String>) negativeAnswers.getAnimals((String) questions.get(i)), intersectedAnswers);
-            } else if (resposta.equalsIgnoreCase("sim")) {
-                intersectedAnswers = intersectList((List<String>) positiveAnswers.getAnimals((String) questions.get(i)), intersectedAnswers);
-            } else if (resposta.equalsIgnoreCase("nao sei")) {
-                intersectedAnswers = intersectList((List<String>) dontKnowAnswers.getAnimals((String) questions.get(i)), intersectedAnswers);
-            }
+				// instances the component based on its URI
+				hashRespostasSim = factory
+						.createInstance("<http://purl.org/dcc/pt.c02foundations.frango.QuestionsHash>");
 
-            if (intersectedAnswers.size() == 1) {
-                animalName = intersectedAnswers.get(0);
-                found = true;
-            }
-        }
+				hashRespostasNao = factory
+						.createInstance("<http://purl.org/dcc/pt.c02foundations.frango.QuestionsHash>");
 
-        if (animalName != null) {
-            acertei = responder.finalAnswer(animalName);
-        } else {
-            acertei = responder.finalAnswer("nao sei");
-        }
+				hashRespostasNaoSei = factory
+						.createInstance("<http://purl.org/dcc/pt.c02foundations.frango.QuestionsHash>");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-        if (acertei) {
-            System.out.println("Oba! Acertei! - " + animalName);
-        } else {
-            System.out.println("fuem! fuem! fuem!");
-        }
-    }
+			// guarda uma lista de todas as perguntas
+			listaPerguntas = new ArrayList<String>();
 
-    private List<String> intersectList(List<String> l1, List<String> l2) {
-        if (l1.isEmpty()) {
-            return l2;
-        } else if (l2.isEmpty()) {
-            return l1;
-        }
+			for (int i = 0; (i < listaNomes.length); i++) {
+				IObjetoConhecimento obj;
+				obj = baseConhecimento.recuperaObjeto(listaNomes[i]);
+				objs.put(listaNomes[i], obj);
 
-        int size = (l1.size() > l2.size()) ? l1.size() : l2.size();
-        List<String> listIntersected = new ArrayList<String>();
+				IDeclaracao decl = obj.primeira();
 
-        for (int i = 0; i < size; i++) {
-            if (l1.size() > l2.size()) {
-                if (l2.contains(l1.get(i))) {
-                    listIntersected.add(l1.get(i));
-                }
-            } else {
-                if (l1.contains(l2.get(i))) {
-                    listIntersected.add(l2.get(i));
-                }
-            }
+				while (decl != null) {
+					if (!isQuestion(decl.getPropriedade())) {
+						insertIntoHash(decl.getPropriedade());
+						addQuestion(decl.getPropriedade());
+					}
+					decl = obj.proxima();
+				}
+			}
+		}
 
-        }
+		jaCacheado = true;
+	}
 
-        return listIntersected;
-    }
+	public void connect(IResponder responder) {
+		boolean acertei, encontrado = false;
+		String nomeAnimal = null;
+		List<String> listaPossiveisAnimais = new ArrayList<String>();
 
-    private void insertIntoHash(String question) {
-        for (int i = 0; i < namesList.length; i++) {
-            IResponder responder = responders.get(namesList[i]);
-            if (responder == null) {
-                responder = new Responder(namesList[i]);
-                responders.put(namesList[i], responder);
-            }
+		// utiliza a lista de perguntas que foi montada anteriormente e vai
+		// perguntando até os animais possiveis para a resposta seja somente 1
+		for (int i = 0; ((i < listaPerguntas.size()) && (!encontrado)); i++) {
+			String resposta = responder.ask((String) listaPerguntas.get(i));
 
-            String resposta = responder.ask(question);
+			// faz uma intersecção das listas, quardando os possiveis animais
+			// para a resposta final
+			if (resposta.equalsIgnoreCase("nao")) {
+				listaPossiveisAnimais = intersectList(
+						hashRespostasSim.getAnimals((String) listaPerguntas
+								.get(i)), listaPossiveisAnimais);
+			} else if (resposta.equalsIgnoreCase("sim")) {
+				listaPossiveisAnimais = intersectList(
+						hashRespostasNao.getAnimals((String) listaPerguntas
+								.get(i)), listaPossiveisAnimais);
+			} else if (resposta.equalsIgnoreCase("nao sei")) {
+				listaPossiveisAnimais = intersectList(
+						hashRespostasNaoSei.getAnimals((String) listaPerguntas
+								.get(i)), listaPossiveisAnimais);
+			}
 
-            if (resposta.equalsIgnoreCase("nao")) {
-                negativeAnswers.putAnimal(question, namesList[i]);
-            } else if (resposta.equalsIgnoreCase("sim")) {
-                positiveAnswers.putAnimal(question, namesList[i]);
-            } else if (resposta.equalsIgnoreCase("nao sei")) {
-                dontKnowAnswers.putAnimal(question, namesList[i]);
-            }
-        }
-    }
+			if (listaPossiveisAnimais.size() == 1) {
+				nomeAnimal = listaPossiveisAnimais.get(0);
+				encontrado = true;
+			}
+		}
 
-    private void addQuestion(String question) {
-        questions.add(question);
-    }
+		if (nomeAnimal != null) {
+			acertei = responder.finalAnswer(nomeAnimal);
+		} else {
+			acertei = responder.finalAnswer("nao sei");
+		}
 
-    private boolean isQuestion(String question) {
-        return (questions.contains(question));
-    }
+		if (acertei) {
+			System.out.println("Oba! Acertei! - " + nomeAnimal);
+		} else {
+			System.out.println("fuem! fuem! fuem!");
+		}
+	}
+
+	private List<String> intersectList(List<String> l1, List<String> l2) {
+		if (l1.isEmpty()) {
+			return l2;
+		} else if (l2.isEmpty()) {
+			return l1;
+		}
+
+		int size = (l1.size() > l2.size()) ? l1.size() : l2.size();
+		List<String> listIntersected = new ArrayList<String>();
+
+		for (int i = 0; i < size; i++) {
+			if (l1.size() > l2.size()) {
+				if (l2.contains(l1.get(i))) {
+					listIntersected.add(l1.get(i));
+				}
+			} else {
+				if (l1.contains(l2.get(i))) {
+					listIntersected.add(l2.get(i));
+				}
+			}
+
+		}
+
+		return listIntersected;
+	}
+
+	private void insertIntoHash(String question) {
+		for (int i = 0; i < listaNomes.length; i++) {
+			IResponder responder = responders.get(listaNomes[i]);
+			if (responder == null) {
+				responder = new Responder(listaNomes[i]);
+				responders.put(listaNomes[i], responder);
+			}
+
+			String resposta = responder.ask(question);
+
+			if (resposta.equalsIgnoreCase("nao")) {
+				hashRespostasSim.putAnimal(question, listaNomes[i]);
+			} else if (resposta.equalsIgnoreCase("sim")) {
+				hashRespostasNao.putAnimal(question, listaNomes[i]);
+			} else if (resposta.equalsIgnoreCase("nao sei")) {
+				hashRespostasNaoSei.putAnimal(question, listaNomes[i]);
+			}
+		}
+	}
+
+	private void addQuestion(String question) {
+		listaPerguntas.add(question);
+	}
+
+	private boolean isQuestion(String question) {
+		return (listaPerguntas.contains(question));
+	}
 }
