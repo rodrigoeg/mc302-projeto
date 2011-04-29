@@ -35,7 +35,7 @@ public interface IQuestionsHash extends ISupports{
 	 * @param animal String
 	 * @return boolean
 	 */
-	public boolean removeAnimals(String question, String animal);
+	public boolean removeAnimal(String question, String animal);
 	
 	/**
 	 * Get the Questions answered
