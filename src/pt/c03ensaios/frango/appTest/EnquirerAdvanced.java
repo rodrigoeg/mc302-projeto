@@ -42,7 +42,7 @@ public class EnquirerAdvanced implements IEnquirer {
 			// aqui é contruido um hash com lista ligadas que quardam os animais
 			// indexados pelas perguntas, sendo que existe um hash para cada
 			// resposta
-			
+
 			try {
 				// creates a global factory
 				IGlobalFactory factory = ComponentContextFactory
@@ -55,7 +55,7 @@ public class EnquirerAdvanced implements IEnquirer {
 						.createInstance("<http://purl.org/dcc/pt.c03ensaios.frango.QuestionsHash>");
 
 				hashRespostasNao = factory
-						.createInstance("<http://purl.org/dcc/pt.cc03ensaios.frango.QuestionsHash>");
+						.createInstance("<http://purl.org/dcc/pt.c03ensaios.frango.QuestionsHash>");
 
 				hashRespostasNaoSei = factory
 						.createInstance("<http://purl.org/dcc/pt.c03ensaios.frango.QuestionsHash>");
@@ -72,12 +72,10 @@ public class EnquirerAdvanced implements IEnquirer {
 				objs.put(listaNomes[i], obj);
 
 				IDeclaracao decl = obj.primeira();
-				
+
 				while (decl != null) {
 					if (!isQuestion(decl.getPropriedade())) {
 						insertIntoHash(decl.getPropriedade());
-						System.out.println("passou");
-
 						addQuestion(decl.getPropriedade());
 					}
 					decl = obj.proxima();
@@ -168,7 +166,7 @@ public class EnquirerAdvanced implements IEnquirer {
 			}
 
 			String resposta = responder.ask(question);
-						
+
 			if (resposta.equalsIgnoreCase("nao")) {
 				hashRespostasSim.putAnimal(question, listaNomes[i]);
 			} else if (resposta.equalsIgnoreCase("sim")) {
@@ -180,9 +178,7 @@ public class EnquirerAdvanced implements IEnquirer {
 	}
 
 	private void addQuestion(String question) {
-		System.out.println("passou");
 		listaPerguntas.add(question);
-		System.out.println("passou2");
 	}
 
 	private boolean isQuestion(String question) {
