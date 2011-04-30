@@ -66,7 +66,7 @@ public class QuestionsHash extends ComponentBase implements IQuestionsHash {
 	 * @param animal String
 	 * @return boolean
 	 */
-	public boolean removeAnimal(String question, String animal) {
+	public boolean removeAnimals(String question, String animal) {
 		boolean result = false;
 
 		// Get a list of animals from the question
