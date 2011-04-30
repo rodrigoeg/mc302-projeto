@@ -74,7 +74,11 @@ public class QuestionsHash extends ComponentBase implements IQuestionsHash {
 
 		// Verify if the list is null, and if it isn't, try to remove the animal
 		if (list != null) {
-			result = list.remove(question);
+			result = list.remove(animal);
+			if (list.size() == 0) {
+				questions.remove(question);
+				numberOfQuestions--;
+			}
 		}
 
 		return result;
