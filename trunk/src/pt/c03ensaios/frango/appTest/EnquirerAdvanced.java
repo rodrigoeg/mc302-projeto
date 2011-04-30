@@ -20,8 +20,8 @@ public class EnquirerAdvanced implements IEnquirer {
 
 	private IBaseConhecimento baseConhecimento;
 
-	// essas variaveis são estaticas para poder economizar no tempo de execução
-	// quando presivar instanciar varios enquirers
+	// essas variaveis sï¿½o estaticas para poder economizar no tempo de execuï¿½ï¿½o
+	// quando precisar instanciar varios enquirers
 	private static String[] listaNomes;
 	private static IQuestionsHash hashRespostasSim;
 	private static IQuestionsHash hashRespostasNao;
@@ -35,11 +35,11 @@ public class EnquirerAdvanced implements IEnquirer {
 		baseConhecimento = new BaseConhecimento();
 		listaNomes = baseConhecimento.listaNomes();
 
-		// so coloca os valores nas variaveis na primeira execução
+		// so coloca os valores nas variaveis na primeira execuï¿½ï¿½o
 
 		if (jaCacheado == false) {
 
-			// aqui é contruido um hash com lista ligadas que quardam os animais
+			// aqui ï¿½ contruido um hash com lista ligadas que quardam os animais
 			// indexados pelas perguntas, sendo que existe um hash para cada
 			// resposta
 
@@ -74,7 +74,7 @@ public class EnquirerAdvanced implements IEnquirer {
 				IDeclaracao decl = obj.primeira();
 
 				while (decl != null) {
-					if (!isQuestion(decl.getPropriedade())) {
+					if (!hasQuestion(decl.getPropriedade())) {
 						insertIntoHash(decl.getPropriedade());
 						addQuestion(decl.getPropriedade());
 					}
@@ -92,11 +92,11 @@ public class EnquirerAdvanced implements IEnquirer {
 		List<String> listaPossiveisAnimais = new ArrayList<String>();
 
 		// utiliza a lista de perguntas que foi montada anteriormente e vai
-		// perguntando até os animais possiveis para a resposta seja somente 1
+		// perguntando atï¿½ os animais possiveis para a resposta seja somente 1
 		for (int i = 0; ((i < listaPerguntas.size()) && (!encontrado)); i++) {
 			String resposta = responder.ask((String) listaPerguntas.get(i));
 
-			// faz uma intersecção das listas, quardando os possiveis animais
+			// faz uma intersecÃ§Ã£o das listas, quardando os possiveis animais
 			// para a resposta final
 			if (resposta.equalsIgnoreCase("nao")) {
 				listaPossiveisAnimais = intersectList(
@@ -131,6 +131,12 @@ public class EnquirerAdvanced implements IEnquirer {
 		}
 	}
 
+	/**
+	 * Cria uma intesecÃ§Ã£o de duas listas, contendo os elementos que pertencem as duas 
+	 * @param l1 primeira lista
+	 * @param l2 segunda lista
+	 * @return
+	 */	
 	private List<String> intersectList(List<String> l1, List<String> l2) {
 		if (l1.isEmpty()) {
 			return l2;
@@ -157,6 +163,10 @@ public class EnquirerAdvanced implements IEnquirer {
 		return listIntersected;
 	}
 
+	/**
+	 * Funcao responsavel por adicionar em um hash dependendo da resposta dada	
+	 * @param question 
+	 */
 	private void insertIntoHash(String question) {
 		for (int i = 0; i < listaNomes.length; i++) {
 			IResponder responder = responders.get(listaNomes[i]);
@@ -177,11 +187,21 @@ public class EnquirerAdvanced implements IEnquirer {
 		}
 	}
 
+	/**
+	 * adiciona uma pergunta na lista de perguntas jÃ¡ feitas
+	 * @param question
+	 */
 	private void addQuestion(String question) {
 		listaPerguntas.add(question);
 	}
 
-	private boolean isQuestion(String question) {
+	
+	/**
+	 * verifica se a pergunta jÃ¡ foi respondida
+	 * @param question
+	 * @return
+	 */
+	private boolean hasQuestion(String question) {
 		return (listaPerguntas.contains(question));
 	}
 }
