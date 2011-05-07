@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_j3IL0HizEeCYGc5QaNM1Jg">
+  <name xsi:nil="true"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_j3IL0XizEeCYGc5QaNM1Jg" name="pt">
+    <packagedElement xmi:type="uml:Package" xmi:id="_j3IL0nizEeCYGc5QaNM1Jg" name="c01interfaces">
+      <packagedElement xmi:type="uml:Package" xmi:id="_j3IL03izEeCYGc5QaNM1Jg" name="s01chaveid">
+        <packagedElement xmi:type="uml:Package" xmi:id="_j3Iy4HizEeCYGc5QaNM1Jg" name="s01base">
+          <packagedElement xmi:type="uml:Package" xmi:id="_j3Iy4XizEeCYGc5QaNM1Jg" name="impl" clientDependency="_j5JlEnizEeCYGc5QaNM1Jg _j5JlE3izEeCYGc5QaNM1Jg _j5JlFHizEeCYGc5QaNM1Jg">
+            <packagedElement xmi:type="uml:Class" xmi:id="_j3Iy4nizEeCYGc5QaNM1Jg" name="ObjetoConhecimento" clientDependency="_j3LPIHizEeCYGc5QaNM1Jg">
+              <elementImport xmi:id="_j3LPIXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3LPInizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy6HizEeCYGc5QaNM1Jg"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j3NrYHizEeCYGc5QaNM1Jg" name="primeira" specification="_j3MdQHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3NrYXizEeCYGc5QaNM1Jg" type="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+                <language>JAVA</language>
+                <body>&#xD;&#xA;    &#x9;IDeclaracao priDecl = null;&#xD;&#xA;    &#x9;&#xD;&#xA;    &#x9;corrente = 0;&#xD;&#xA;    &#x9;&#xD;&#xA;    &#x9;if (declaracoes != null &amp;&amp; declaracoes.length &amp;gt; 0)&#xD;&#xA;    &#x9;&#x9;priDecl = declaracoes[0];&#xD;&#xA;    &#x9;&#xD;&#xA;    &#x9;return priDecl;&#xD;&#xA;    </body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j3QHoHizEeCYGc5QaNM1Jg" name="proxima" specification="_j3O5gHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3QHoXizEeCYGc5QaNM1Jg" type="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+                <language>JAVA</language>
+                <body>&#xD;&#xA;    &#x9;IDeclaracao proxDecl = null;&#xD;&#xA;    &#x9;&#xD;&#xA;    &#x9;if (declaracoes != null &amp;&amp; corrente &lt; declaracoes.length-1) {&#xD;&#xA;    &#x9;&#x9;corrente++;&#xD;&#xA;    &#x9;&#x9;proxDecl = declaracoes[corrente];&#xD;&#xA;    &#x9;}&#xD;&#xA;    &#x9;&#xD;&#xA;    &#x9;return proxDecl;&#xD;&#xA;    </body>
+              </ownedBehavior>
+              <interfaceRealization xmi:id="_j3LPIHizEeCYGc5QaNM1Jg" name="pt.c01interfaces.s01chaveid.s01base.inter.IObjetoConhecimento" supplier="_j3Iy6HizEeCYGc5QaNM1Jg" client="_j3Iy4nizEeCYGc5QaNM1Jg" contract="_j3Iy6HizEeCYGc5QaNM1Jg"/>
+              <ownedOperation xmi:id="_j3MdQHizEeCYGc5QaNM1Jg" name="primeira" visibility="public" method="_j3NrYHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3MdQXizEeCYGc5QaNM1Jg" type="_j3Iy5nizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3O5gHizEeCYGc5QaNM1Jg" name="proxima" visibility="public" method="_j3QHoHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3O5gXizEeCYGc5QaNM1Jg" type="_j3Iy5nizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_j3Iy43izEeCYGc5QaNM1Jg" name="BaseConhecimento" clientDependency="_j3RVwHizEeCYGc5QaNM1Jg">
+              <elementImport xmi:id="_j3RVxHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3RVw3izEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3R80XizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3R80HizEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3R803izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3R80nizEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3R81XizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3R81HizEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3R82HizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3R813izEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3R82XizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ8HizEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3R82nizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+              <elementImport xmi:id="_j3Sj4HizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy6HizEeCYGc5QaNM1Jg"/>
+              <ownedAttribute xmi:id="_j3TK8nizEeCYGc5QaNM1Jg" name="DIRETORIO_RAIZ" visibility="public" isStatic="true" type="_j3TK8XizEeCYGc5QaNM1Jg">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_j3TK83izEeCYGc5QaNM1Jg" name="" type="_j3TK8XizEeCYGc5QaNM1Jg" value="&quot;pt/c01interfaces/s01chaveid/s01base/bd/&quot;"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:id="_j3UZEHizEeCYGc5QaNM1Jg" name="EXTENSAO" visibility="public" isStatic="true" type="_j3TK8XizEeCYGc5QaNM1Jg">
+                <defaultValue xmi:type="uml:LiteralString" xmi:id="_j3UZEXizEeCYGc5QaNM1Jg" name="" type="_j3TK8XizEeCYGc5QaNM1Jg" value="&quot;.txt&quot;"/>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j3XcYHizEeCYGc5QaNM1Jg" name="listaNomes" specification="_j3WOQHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3XcYXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <language>JAVA</language>
+                <body>&#xD;&#xA;        File diretorioRaiz = new File(DIRETORIO_RAIZ);&#xD;&#xA;        &#xD;&#xA;        String lista[] = diretorioRaiz.list();&#xD;&#xA;        Vector listaFiltrada = new Vector();&#xD;&#xA;        &#xD;&#xA;        for (int n = 0; n &lt; lista.length; n++)&#xD;&#xA;            if (lista[n].endsWith(&quot;.txt&quot;))&#xD;&#xA;                listaFiltrada.add(lista[n].substring(0, lista[n].length() - 4));&#xD;&#xA;        &#xD;&#xA;        return (String[])listaFiltrada.toArray(new String[0]);&#xD;&#xA;    </body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j3cU4HizEeCYGc5QaNM1Jg" name="recuperaObjeto" specification="_j3bGwHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3cU4XizEeCYGc5QaNM1Jg" name="nome" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <ownedParameter xmi:id="_j3cU4nizEeCYGc5QaNM1Jg" type="_j3Iy6HizEeCYGc5QaNM1Jg"/>
+                <language>JAVA</language>
+                <body>&#xD;&#xA;&#x9;&#x9;Vector&lt;IDeclaracao&amp;gt; vdecl = new Vector&lt;IDeclaracao&amp;gt;();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;try {&#xD;&#xA;    &#x9;&#x9;FileReader arquivo = new FileReader(DIRETORIO_RAIZ + nome + EXTENSAO);&#xD;&#xA;    &#x9;&#x9;BufferedReader formatado = new BufferedReader(arquivo);&#xD;&#xA;    &#x9;    &#xD;&#xA;    &#x9;    String linha = formatado.readLine();&#xD;&#xA;    &#x9;    while (linha != null)&#xD;&#xA;    &#x9;    {&#xD;&#xA;    &#x9;    &#x9;IDeclaracao decl = montaDeclaracao(linha);&#xD;&#xA;    &#x9;    &#x9;&#xD;&#xA;    &#x9;    &#x9;if (decl != null)&#xD;&#xA;    &#x9;    &#x9;&#x9;vdecl.add(decl);&#xD;&#xA;    &#x9;    &#x9;&#xD;&#xA;    &#x9;    &#x9;linha = formatado.readLine();&#xD;&#xA;    &#x9;    }&#xD;&#xA;    &#x9;    &#xD;&#xA;    &#x9;    arquivo.close();&#xD;&#xA;    &#x9;} catch (IOException erro) {&#xD;&#xA;    &#x9;&#x9;erro.printStackTrace();&#xD;&#xA;    &#x9;}&#xD;&#xA;    &#x9;&#xD;&#xA;    &#x9;IObjetoConhecimento obj = new ObjetoConhecimento(vdecl.toArray(new IDeclaracao[0]));&#xD;&#xA;    &#x9;&#xD;&#xA;    &#x9;return obj;&#xD;&#xA;    </body>
+              </ownedBehavior>
+              <interfaceRealization xmi:id="_j3RVwHizEeCYGc5QaNM1Jg" name="pt.c01interfaces.s01chaveid.s01base.inter.IBaseConhecimento" supplier="_j3JZ8HizEeCYGc5QaNM1Jg" client="_j3Iy43izEeCYGc5QaNM1Jg" contract="_j3JZ8HizEeCYGc5QaNM1Jg"/>
+              <ownedOperation xmi:id="_j3WOQHizEeCYGc5QaNM1Jg" name="listaNomes" visibility="public" method="_j3XcYHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3WOQXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j3WOQnizEeCYGc5QaNM1Jg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3bGwHizEeCYGc5QaNM1Jg" name="recuperaObjeto" visibility="public" method="_j3cU4HizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3bGwXizEeCYGc5QaNM1Jg" name="nome" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <ownedParameter xmi:id="_j3bGwnizEeCYGc5QaNM1Jg" type="_j3Iy6HizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_j3Iy5HizEeCYGc5QaNM1Jg" name="Declaracao" clientDependency="_j3c78HizEeCYGc5QaNM1Jg">
+              <elementImport xmi:id="_j3djAHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j3fYMHizEeCYGc5QaNM1Jg" name="getPropriedade" specification="_j3exIHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3fYMXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <language>JAVA</language>
+                <body>&#xD;&#xA;    &#x9;return propriedade;&#xD;&#xA;    </body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j3h0cHizEeCYGc5QaNM1Jg" name="getValor" specification="_j3gmUHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3h0cXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <language>JAVA</language>
+                <body>&#xD;&#xA;    &#x9;return valor;&#xD;&#xA;    </body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j3jpoHizEeCYGc5QaNM1Jg" name="toString" specification="_j3jCkHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3jpoXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <language>JAVA</language>
+                <body>&#xD;&#xA;    &#x9;return &quot;(propriedade: &quot; + propriedade + &quot;, valor: &quot; + valor + &quot;)&quot;;&#xD;&#xA;    </body>
+              </ownedBehavior>
+              <interfaceRealization xmi:id="_j3c78HizEeCYGc5QaNM1Jg" name="pt.c01interfaces.s01chaveid.s01base.inter.IDeclaracao" supplier="_j3Iy5nizEeCYGc5QaNM1Jg" client="_j3Iy5HizEeCYGc5QaNM1Jg" contract="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+              <ownedOperation xmi:id="_j3exIHizEeCYGc5QaNM1Jg" name="getPropriedade" visibility="public" method="_j3fYMHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3exIXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3gmUHizEeCYGc5QaNM1Jg" name="getValor" visibility="public" method="_j3h0cHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3gmUXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3jCkHizEeCYGc5QaNM1Jg" name="toString" visibility="public" method="_j3jpoHizEeCYGc5QaNM1Jg">
+                <ownedParameter xmi:id="_j3jCkXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Usage" xmi:id="_j5JlEnizEeCYGc5QaNM1Jg" supplier="_j3Iy5XizEeCYGc5QaNM1Jg" client="_j3Iy4XizEeCYGc5QaNM1Jg"/>
+            <packagedElement xmi:type="uml:Usage" xmi:id="_j5JlE3izEeCYGc5QaNM1Jg" supplier="_j3RVwnizEeCYGc5QaNM1Jg" client="_j3Iy4XizEeCYGc5QaNM1Jg"/>
+            <packagedElement xmi:type="uml:Usage" xmi:id="_j5JlFHizEeCYGc5QaNM1Jg" supplier="_j3R81nizEeCYGc5QaNM1Jg" client="_j3Iy4XizEeCYGc5QaNM1Jg"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_j3Iy5XizEeCYGc5QaNM1Jg" name="inter">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_j3Iy5nizEeCYGc5QaNM1Jg" name="IDeclaracao">
+              <ownedOperation xmi:id="_j3k3wHizEeCYGc5QaNM1Jg" name="getPropriedade" visibility="public">
+                <ownedParameter xmi:id="_j3k3wXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3le0HizEeCYGc5QaNM1Jg" name="getValor" visibility="public">
+                <ownedParameter xmi:id="_j3le0XizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3ms8HizEeCYGc5QaNM1Jg" name="toString" visibility="public">
+                <ownedParameter xmi:id="_j3ms8XizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_j3Iy53izEeCYGc5QaNM1Jg" name="IResponder">
+              <ownedOperation xmi:id="_j3n7EHizEeCYGc5QaNM1Jg" name="ask" visibility="public">
+                <ownedParameter xmi:id="_j3n7EXizEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <ownedParameter xmi:id="_j3n7EnizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3pJMXizEeCYGc5QaNM1Jg" name="finalAnswer" visibility="public">
+                <ownedParameter xmi:id="_j3pJMnizEeCYGc5QaNM1Jg" name="answer" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <ownedParameter xmi:id="_j3pJM3izEeCYGc5QaNM1Jg" type="_j3pJMHizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_j3Iy6HizEeCYGc5QaNM1Jg" name="IObjetoConhecimento">
+              <ownedOperation xmi:id="_j3qXUHizEeCYGc5QaNM1Jg" name="primeira" visibility="public">
+                <ownedParameter xmi:id="_j3qXUXizEeCYGc5QaNM1Jg" type="_j3Iy5nizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3q-YHizEeCYGc5QaNM1Jg" name="proxima" visibility="public">
+                <ownedParameter xmi:id="_j3q-YXizEeCYGc5QaNM1Jg" type="_j3Iy5nizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_j3JZ8HizEeCYGc5QaNM1Jg" name="IBaseConhecimento">
+              <ownedOperation xmi:id="_j3sMgHizEeCYGc5QaNM1Jg" name="listaNomes" visibility="public">
+                <ownedParameter xmi:id="_j3sMgXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j3sMgnizEeCYGc5QaNM1Jg" value="*"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3taoHizEeCYGc5QaNM1Jg" name="recuperaObjeto" visibility="public">
+                <ownedParameter xmi:id="_j3taoXizEeCYGc5QaNM1Jg" name="nome" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <ownedParameter xmi:id="_j3taonizEeCYGc5QaNM1Jg" type="_j3Iy6HizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_j3JZ8XizEeCYGc5QaNM1Jg" name="IStatistics">
+              <ownedOperation xmi:id="_j3v24HizEeCYGc5QaNM1Jg" name="addInfo" visibility="public">
+                <ownedParameter xmi:id="_j3v24XizEeCYGc5QaNM1Jg" name="numeroPergunta" type="_j3uBsHizEeCYGc5QaNM1Jg"/>
+                <ownedParameter xmi:id="_j3v24nizEeCYGc5QaNM1Jg" name="pergunta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+                <ownedParameter xmi:id="_j3v243izEeCYGc5QaNM1Jg" name="resposta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3xFAHizEeCYGc5QaNM1Jg" name="toString" visibility="public">
+                <ownedParameter xmi:id="_j3xFAXizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3xsEHizEeCYGc5QaNM1Jg" name="repetiu" visibility="public">
+                <ownedParameter xmi:id="_j3xsEXizEeCYGc5QaNM1Jg" type="_j3pJMHizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_j3yTIHizEeCYGc5QaNM1Jg" name="totalPerguntas" visibility="public">
+                <ownedParameter xmi:id="_j3yTIXizEeCYGc5QaNM1Jg" type="_j3uBsHizEeCYGc5QaNM1Jg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_j3JZ8nizEeCYGc5QaNM1Jg" name="IEnquirer">
+              <ownedOperation xmi:id="_j3zhQHizEeCYGc5QaNM1Jg" name="connect" visibility="public">
+                <ownedParameter xmi:id="_j3zhQXizEeCYGc5QaNM1Jg" name="responder" type="_j3Iy53izEeCYGc5QaNM1Jg"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_j3JZ83izEeCYGc5QaNM1Jg" name="c03ensaios">
+      <packagedElement xmi:type="uml:Package" xmi:id="_j3JZ9HizEeCYGc5QaNM1Jg" name="frango" clientDependency="_j5KMIHizEeCYGc5QaNM1Jg _j5KMIXizEeCYGc5QaNM1Jg _j5KMInizEeCYGc5QaNM1Jg _j5KMI3izEeCYGc5QaNM1Jg">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_j3JZ9XizEeCYGc5QaNM1Jg" name="IQuestionsHash">
+          <eAnnotations xmi:id="_j3JZ9nizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+            <details xmi:id="_j3JZ93izEeCYGc5QaNM1Jg" key="documentation" value=" Manage the questions that where answered by the animals&#xD;&#xA; &#xD;&#xA; @author Maurício Bertanha&#xD;&#xA; @author Rodrigo Elizeu Gonçalves&#xD;&#xA;"/>
+          </eAnnotations>
+          <generalization xmi:id="_j30vYnizEeCYGc5QaNM1Jg" general="_j30vYXizEeCYGc5QaNM1Jg"/>
+          <ownedOperation xmi:id="_j32kkHizEeCYGc5QaNM1Jg" name="getAnimals" visibility="public">
+            <eAnnotations xmi:id="_j32kkXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j32kknizEeCYGc5QaNM1Jg" key="documentation" value=" Get a list of animals which answered the question &#xD;&#xA; @param question String&#xD;&#xA; @return List&lt;String> &#xD;&#xA; "/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j32kk3izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j32klHizEeCYGc5QaNM1Jg" type="_j30vY3izEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j35n4HizEeCYGc5QaNM1Jg" name="putAnimal" visibility="public">
+            <eAnnotations xmi:id="_j35n4XizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j35n4nizEeCYGc5QaNM1Jg" key="documentation" value=" Put the animal into the hash&#xD;&#xA; @param question String&#xD;&#xA; @param animal String&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j35n43izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j35n5HizEeCYGc5QaNM1Jg" name="animal" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j38EIHizEeCYGc5QaNM1Jg" name="removeAnimals" visibility="public">
+            <eAnnotations xmi:id="_j38EIXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j38EInizEeCYGc5QaNM1Jg" key="documentation" value=" Remove the animal from the hash&#xD;&#xA; @param question String&#xD;&#xA; @param animal String&#xD;&#xA; @return boolean&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j38EI3izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j38EJHizEeCYGc5QaNM1Jg" name="animal" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j38EJXizEeCYGc5QaNM1Jg" type="_j3pJMHizEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j38rMHizEeCYGc5QaNM1Jg" name="getQuestions" visibility="public">
+            <eAnnotations xmi:id="_j38rMXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j38rMnizEeCYGc5QaNM1Jg" key="documentation" value=" Get the Questions answered&#xD;&#xA; @return List&lt;String>&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j38rM3izEeCYGc5QaNM1Jg" type="_j30vY3izEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j38rNHizEeCYGc5QaNM1Jg" name="getNumberOfQuestions" visibility="public">
+            <eAnnotations xmi:id="_j38rNXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j38rNnizEeCYGc5QaNM1Jg" key="documentation" value=" Get the Number of Questions answered&#xD;&#xA; @return int&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j38rN3izEeCYGc5QaNM1Jg" type="_j3uBsHizEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j3-gYHizEeCYGc5QaNM1Jg" name="getArrayAnimals" visibility="public">
+            <eAnnotations xmi:id="_j3-gYXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j3_HcHizEeCYGc5QaNM1Jg" key="documentation" value=" Get an array of String of animals which answered the question&#xD;&#xA; @param question String&#xD;&#xA; @return String[]&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j3_HcXizEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j3_HcnizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return">
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j3_Hc3izEeCYGc5QaNM1Jg" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_j3KBAHizEeCYGc5QaNM1Jg" name="QuestionsHash" clientDependency="_j4AVkHizEeCYGc5QaNM1Jg">
+          <eAnnotations xmi:id="_j3KBAXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+            <details xmi:id="_j3KBAnizEeCYGc5QaNM1Jg" key="documentation" value=" Manage the questions that where answered by the animals&#xD;&#xA; &#xD;&#xA; @author Maurício Bertanha&#xD;&#xA; @author Rodrigo Elizeu Gonçalves&#xD;&#xA;"/>
+          </eAnnotations>
+          <elementImport xmi:id="_j4BjtHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4Bjs3izEeCYGc5QaNM1Jg"/>
+          <elementImport xmi:id="_j4BjtnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4BjtXizEeCYGc5QaNM1Jg"/>
+          <elementImport xmi:id="_j4Bjt3izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j30vY3izEeCYGc5QaNM1Jg"/>
+          <elementImport xmi:id="_j4CKwXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4CKwHizEeCYGc5QaNM1Jg"/>
+          <elementImport xmi:id="_j4CKwnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4BjsXizEeCYGc5QaNM1Jg"/>
+          <generalization xmi:id="_j4BjsnizEeCYGc5QaNM1Jg" general="_j4BjsXizEeCYGc5QaNM1Jg"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4FOFXizEeCYGc5QaNM1Jg" name="getAnimals" specification="_j4FOEHizEeCYGc5QaNM1Jg">
+            <ownedParameter xmi:id="_j4FOFnizEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4FOF3izEeCYGc5QaNM1Jg" type="_j30vY3izEeCYGc5QaNM1Jg"/>
+            <language>JAVA</language>
+            <body>&#xD;&#xA;&#x9;&#x9;return hash.get(question);&#xD;&#xA;&#x9;</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4KGkHizEeCYGc5QaNM1Jg" name="putAnimal" specification="_j4JfgHizEeCYGc5QaNM1Jg">
+            <ownedParameter xmi:id="_j4KGkXizEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4KGknizEeCYGc5QaNM1Jg" name="animal" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <language>JAVA</language>
+            <body>&#xD;&#xA;&#x9;&#x9;// Get a list of animals from the question&#xD;&#xA;&#x9;&#x9;List&lt;String&amp;gt; list = getAnimals(question);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Verify if the list is null, and if it is, create a new list&#xD;&#xA;&#x9;&#x9;if (list == null) {&#xD;&#xA;&#x9;&#x9;&#x9;list = new ArrayList&lt;String&amp;gt;();&#xD;&#xA;&#x9;&#x9;&#x9;questions.add(question);&#xD;&#xA;&#x9;&#x9;&#x9;numberOfQuestions++;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Add the animal to the list&#xD;&#xA;&#x9;&#x9;list.add(animal);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Put the list in the hash&#xD;&#xA;&#x9;&#x9;hash.put(question, list);&#xD;&#xA;&#x9;</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4Nw9nizEeCYGc5QaNM1Jg" name="removeAnimals" specification="_j4Nw8HizEeCYGc5QaNM1Jg">
+            <ownedParameter xmi:id="_j4Nw93izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4Nw-HizEeCYGc5QaNM1Jg" name="animal" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4Nw-XizEeCYGc5QaNM1Jg" type="_j3pJMHizEeCYGc5QaNM1Jg"/>
+            <language>JAVA</language>
+            <body>&#xD;&#xA;&#x9;&#x9;boolean result = false;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Get a list of animals from the question&#xD;&#xA;&#x9;&#x9;List&lt;String&amp;gt; list = getAnimals(question);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// Verify if the list is null, and if it isn't, try to remove the animal&#xD;&#xA;&#x9;&#x9;if (list != null) {&#xD;&#xA;&#x9;&#x9;&#x9;result = list.remove(animal);&#xD;&#xA;&#x9;&#x9;&#x9;if (list.size() == 0) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;questions.remove(question);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;numberOfQuestions--;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return result;&#xD;&#xA;&#x9;</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4O_FHizEeCYGc5QaNM1Jg" name="getQuestions" specification="_j4O_EHizEeCYGc5QaNM1Jg">
+            <ownedParameter xmi:id="_j4O_FXizEeCYGc5QaNM1Jg" type="_j30vY3izEeCYGc5QaNM1Jg"/>
+            <language>JAVA</language>
+            <body>&#xD;&#xA;&#x9;&#x9;return questions;&#xD;&#xA;&#x9;</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4PmJHizEeCYGc5QaNM1Jg" name="getNumberOfQuestions" specification="_j4PmIHizEeCYGc5QaNM1Jg">
+            <ownedParameter xmi:id="_j4PmJXizEeCYGc5QaNM1Jg" type="_j3uBsHizEeCYGc5QaNM1Jg"/>
+            <language>JAVA</language>
+            <body>&#xD;&#xA;&#x9;&#x9;return numberOfQuestions;&#xD;&#xA;&#x9;</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4SpdnizEeCYGc5QaNM1Jg" name="getArrayAnimals" specification="_j4SpcHizEeCYGc5QaNM1Jg">
+            <ownedParameter xmi:id="_j4Spd3izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4SpeHizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <language>JAVA</language>
+            <body>&#xD;&#xA;&#x9;&#x9;return (String[]) getAnimals(question).toArray();&#xD;&#xA;&#x9;</body>
+          </ownedBehavior>
+          <interfaceRealization xmi:id="_j4AVkHizEeCYGc5QaNM1Jg" name="pt.c03ensaios.frango.IQuestionsHash" supplier="_j3JZ9XizEeCYGc5QaNM1Jg" client="_j3KBAHizEeCYGc5QaNM1Jg" contract="_j3JZ9XizEeCYGc5QaNM1Jg"/>
+          <ownedOperation xmi:id="_j4FOEHizEeCYGc5QaNM1Jg" name="getAnimals" visibility="public" method="_j4FOFXizEeCYGc5QaNM1Jg">
+            <eAnnotations xmi:id="_j4FOEXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j4FOEnizEeCYGc5QaNM1Jg" key="documentation" value=" Get a list of animals which answered the question &#xD;&#xA; @param question String&#xD;&#xA; @return List&lt;String> &#xD;&#xA; "/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j4FOE3izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4FOFHizEeCYGc5QaNM1Jg" type="_j30vY3izEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j4JfgHizEeCYGc5QaNM1Jg" name="putAnimal" visibility="public" method="_j4KGkHizEeCYGc5QaNM1Jg">
+            <eAnnotations xmi:id="_j4JfgXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j4JfgnizEeCYGc5QaNM1Jg" key="documentation" value=" Put the animal into the hash&#xD;&#xA; @param question String&#xD;&#xA; @param animal String&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j4Jfg3izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4JfhHizEeCYGc5QaNM1Jg" name="animal" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j4Nw8HizEeCYGc5QaNM1Jg" name="removeAnimals" visibility="public" method="_j4Nw9nizEeCYGc5QaNM1Jg">
+            <eAnnotations xmi:id="_j4Nw8XizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j4Nw8nizEeCYGc5QaNM1Jg" key="documentation" value=" Remove the animal from the hash&#xD;&#xA; @param question String&#xD;&#xA; @param animal String&#xD;&#xA; @return boolean&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j4Nw83izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4Nw9HizEeCYGc5QaNM1Jg" name="animal" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4Nw9XizEeCYGc5QaNM1Jg" type="_j3pJMHizEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j4O_EHizEeCYGc5QaNM1Jg" name="getQuestions" visibility="public" method="_j4O_FHizEeCYGc5QaNM1Jg">
+            <eAnnotations xmi:id="_j4O_EXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j4O_EnizEeCYGc5QaNM1Jg" key="documentation" value=" Get the Questions answered&#xD;&#xA; @return List&lt;String>&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j4O_E3izEeCYGc5QaNM1Jg" type="_j30vY3izEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j4PmIHizEeCYGc5QaNM1Jg" name="getNumberOfQuestions" visibility="public" method="_j4PmJHizEeCYGc5QaNM1Jg">
+            <eAnnotations xmi:id="_j4PmIXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j4PmInizEeCYGc5QaNM1Jg" key="documentation" value=" Get the Number of Questions answered&#xD;&#xA; @return int&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j4PmI3izEeCYGc5QaNM1Jg" type="_j3uBsHizEeCYGc5QaNM1Jg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_j4SpcHizEeCYGc5QaNM1Jg" name="getArrayAnimals" visibility="public" method="_j4SpdnizEeCYGc5QaNM1Jg">
+            <eAnnotations xmi:id="_j4SpcXizEeCYGc5QaNM1Jg" source="http://www.topcased.org/documentation">
+              <details xmi:id="_j4SpcnizEeCYGc5QaNM1Jg" key="documentation" value=" Get an array of String of animals which answered the question&#xD;&#xA; @param question String&#xD;&#xA; @return String[]&#xD;&#xA;&#x9;"/>
+            </eAnnotations>
+            <ownedParameter xmi:id="_j4Spc3izEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            <ownedParameter xmi:id="_j4SpdHizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return">
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j4SpdXizEeCYGc5QaNM1Jg" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_j3KBA3izEeCYGc5QaNM1Jg" name="app" clientDependency="_j5KMJHizEeCYGc5QaNM1Jg _j5KMJXizEeCYGc5QaNM1Jg _j5KMJnizEeCYGc5QaNM1Jg _j5KMJ3izEeCYGc5QaNM1Jg _j5KMKHizEeCYGc5QaNM1Jg _j5KMKXizEeCYGc5QaNM1Jg">
+          <packagedElement xmi:type="uml:Class" xmi:id="_j3KBBHizEeCYGc5QaNM1Jg" name="BancoRespostas">
+            <elementImport xmi:id="_j4TQgHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4Bjs3izEeCYGc5QaNM1Jg"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4WT0HizEeCYGc5QaNM1Jg" name="setResposta" specification="_j4VswHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4WT0XizEeCYGc5QaNM1Jg" name="pergunta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4WT0nizEeCYGc5QaNM1Jg" name="resposta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;&#x9;&#x9;perguntas.add(pergunta);&#xD;&#xA;&#x9;&#x9;respostas.add(resposta);&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4YwEHizEeCYGc5QaNM1Jg" name="getResposta" specification="_j4YJAHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4YwEXizEeCYGc5QaNM1Jg" name="pergunta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4YwEnizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;&#x9;&#x9;String resposta = null;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;for (int i = 0; i &lt; perguntas.size(); i++) {&#xD;&#xA;&#x9;&#x9;&#x9;if (perguntas.get(i).equalsIgnoreCase(pergunta)){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;resposta = respostas.get(i);&#xD;&#xA;&#x9;&#x9;&#x9;}&#x9;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;return resposta;&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <ownedOperation xmi:id="_j4VswHizEeCYGc5QaNM1Jg" name="setResposta" visibility="public" method="_j4WT0HizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4VswXizEeCYGc5QaNM1Jg" name="pergunta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4VswnizEeCYGc5QaNM1Jg" name="resposta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_j4YJAHizEeCYGc5QaNM1Jg" name="getResposta" visibility="public" method="_j4YwEHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4YJAXizEeCYGc5QaNM1Jg" name="pergunta" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4YJAnizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_j3KBBXizEeCYGc5QaNM1Jg" name="Responder" clientDependency="_j4Z-MHizEeCYGc5QaNM1Jg">
+            <elementImport xmi:id="_j4Z-MXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy43izEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4Z-MnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ8HizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4Z-M3izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4Z-NHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy6HizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4Z-NXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy53izEeCYGc5QaNM1Jg"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4ePoHizEeCYGc5QaNM1Jg" name="ask" specification="_j4dBgHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4ePoXizEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4ePonizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;&#x9;&#x9;String resp = &quot;nao sei&quot;;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;IDeclaracao decl = obj.primeira();&#xD;&#xA;&#x9;&#x9;while (decl != null &amp;&amp; !decl.getPropriedade().equalsIgnoreCase(question))&#xD;&#xA;&#x9;&#x9;&#x9;decl = obj.proxima();&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;if (decl != null)&#xD;&#xA;&#x9;&#x9;&#x9;resp = decl.getValor();&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;return resp;&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4ihEHizEeCYGc5QaNM1Jg" name="finalAnswer" specification="_j4hS8HizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4ihEXizEeCYGc5QaNM1Jg" name="answer" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4ihEnizEeCYGc5QaNM1Jg" type="_j3pJMHizEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;        return answer.equalsIgnoreCase(animal);&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <interfaceRealization xmi:id="_j4Z-MHizEeCYGc5QaNM1Jg" name="pt.c01interfaces.s01chaveid.s01base.inter.IResponder" supplier="_j3Iy53izEeCYGc5QaNM1Jg" client="_j3KBBXizEeCYGc5QaNM1Jg" contract="_j3Iy53izEeCYGc5QaNM1Jg"/>
+            <ownedOperation xmi:id="_j4dBgHizEeCYGc5QaNM1Jg" name="ask" visibility="public" method="_j4ePoHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4dBgXizEeCYGc5QaNM1Jg" name="question" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4dBgnizEeCYGc5QaNM1Jg" type="_j3TK8XizEeCYGc5QaNM1Jg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_j4hS8HizEeCYGc5QaNM1Jg" name="finalAnswer" visibility="public" method="_j4ihEHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4hS8XizEeCYGc5QaNM1Jg" name="answer" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <ownedParameter xmi:id="_j4hS8nizEeCYGc5QaNM1Jg" type="_j3pJMHizEeCYGc5QaNM1Jg" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_j3KBBnizEeCYGc5QaNM1Jg" name="EnquirerBasic" clientDependency="_j4kWQHizEeCYGc5QaNM1Jg">
+            <elementImport xmi:id="_j4kWQXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4BjtXizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4kWQnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy43izEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4kWQ3izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ8HizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4kWRHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4kWRXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ8nizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4kWRnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy6HizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4kWR3izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy53izEeCYGc5QaNM1Jg"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j4pOwHizEeCYGc5QaNM1Jg" name="connect" specification="_j4oAoHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4pOwXizEeCYGc5QaNM1Jg" name="responder" type="_j3Iy53izEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;        BancoRespostas respostas = new BancoRespostas();&#xD;&#xA;        String animal = null;&#xD;&#xA;&#xD;&#xA;        IBaseConhecimento base = new BaseConhecimento();&#xD;&#xA;&#xD;&#xA;        if (listaNomes == null) {&#xD;&#xA;            listaNomes = base.listaNomes();&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        //varre toda a lista de animais fazendo todas as pertuntas, e quando encontrar um animal que tenha todas as perguntas&#xD;&#xA;        for (int i = 0; (i &lt; listaNomes.length &amp;&amp; animal == null); i++) {&#xD;&#xA;            IObjetoConhecimento obj = objs.get(listaNomes[i]);&#xD;&#xA;            if (obj == null) {&#xD;&#xA;                obj = base.recuperaObjeto(listaNomes[i]);&#xD;&#xA;                objs.put(listaNomes[i], obj);&#xD;&#xA;            }&#xD;&#xA;&#xD;&#xA;            IDeclaracao decl = obj.primeira();&#xD;&#xA;            boolean igual = true;&#xD;&#xA;            while (decl != null &amp;&amp; igual == true) {&#xD;&#xA;                if (!(respostas.getResposta(decl.getPropriedade()) != null)) {&#xD;&#xA;                    respostas.setResposta(decl.getPropriedade(), responder.ask(decl.getPropriedade()));&#xD;&#xA;                }&#xD;&#xA;&#xD;&#xA;                if (decl.getValor().equalsIgnoreCase(respostas.getResposta(decl.getPropriedade()))) {&#xD;&#xA;                    decl = obj.proxima();&#xD;&#xA;                } else {&#xD;&#xA;                    igual = false;&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;&#xD;&#xA;            if (decl == null) {&#xD;&#xA;                animal = listaNomes[i];&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        boolean acertei;&#xD;&#xA;&#xD;&#xA;        if (animal != null) {&#xD;&#xA;            acertei = responder.finalAnswer(animal);&#xD;&#xA;        } else {&#xD;&#xA;            acertei = responder.finalAnswer(&quot;nao sei&quot;);&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        if (acertei) {&#xD;&#xA;            System.out.println(&quot;Oba! Acertei! - &quot; + animal);&#xD;&#xA;        } else {&#xD;&#xA;            System.out.println(&quot;fuem! fuem! fuem!&quot;);&#xD;&#xA;        }&#xD;&#xA;    </body>
+            </ownedBehavior>
+            <interfaceRealization xmi:id="_j4kWQHizEeCYGc5QaNM1Jg" name="pt.c01interfaces.s01chaveid.s01base.inter.IEnquirer" supplier="_j3JZ8nizEeCYGc5QaNM1Jg" client="_j3KBBnizEeCYGc5QaNM1Jg" contract="_j3JZ8nizEeCYGc5QaNM1Jg"/>
+            <ownedOperation xmi:id="_j4oAoHizEeCYGc5QaNM1Jg" name="connect" visibility="public" method="_j4pOwHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4oAoXizEeCYGc5QaNM1Jg" name="responder" type="_j3Iy53izEeCYGc5QaNM1Jg"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_j3KBB3izEeCYGc5QaNM1Jg" name="EnquirerAdvanced" clientDependency="_j4rrAHizEeCYGc5QaNM1Jg">
+            <elementImport xmi:id="_j4rrAXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4Bjs3izEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4rrAnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4BjtXizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4rrA3izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j30vY3izEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4rrBnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4rrBXizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSEnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j4sSEXizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSE3izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy43izEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSFHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ8HizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSFXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy5nizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSFnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ8nizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSF3izEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy6HizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSGHizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy53izEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSGXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ9XizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j4sSGnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3KBAHizEeCYGc5QaNM1Jg"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j5BpQHizEeCYGc5QaNM1Jg" name="connect" specification="_j4_0EHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j5BpQXizEeCYGc5QaNM1Jg" name="responder" type="_j3Iy53izEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;&#x9;&#x9;boolean acertei, encontrado = false;&#xD;&#xA;&#x9;&#x9;String nomeAnimal = null;&#xD;&#xA;&#x9;&#x9;List&lt;String&amp;gt; listaPossiveisAnimais = new ArrayList&lt;String&amp;gt;();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// utiliza a lista de perguntas que foi montada anteriormente e vai&#xD;&#xA;&#x9;&#x9;// perguntando atï¿½ os animais possiveis para a resposta seja somente 1&#xD;&#xA;&#x9;&#x9;for (int i = 0; ((i &lt; listaPerguntas.size()) &amp;&amp; (!encontrado)); i++) {&#xD;&#xA;&#x9;&#x9;&#x9;String resposta = responder.ask((String) listaPerguntas.get(i));&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;// faz uma intersecÃ§Ã£o das listas, quardando os possiveis animais&#xD;&#xA;&#x9;&#x9;&#x9;// para a resposta final&#xD;&#xA;&#x9;&#x9;&#x9;if (resposta.equalsIgnoreCase(&quot;nao&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;listaPossiveisAnimais = intersectList(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;hashRespostasSim.getAnimals((String) listaPerguntas&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.get(i)), listaPossiveisAnimais);&#xD;&#xA;&#x9;&#x9;&#x9;} else if (resposta.equalsIgnoreCase(&quot;sim&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;listaPossiveisAnimais = intersectList(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;hashRespostasNao.getAnimals((String) listaPerguntas&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.get(i)), listaPossiveisAnimais);&#xD;&#xA;&#x9;&#x9;&#x9;} else if (resposta.equalsIgnoreCase(&quot;nao sei&quot;)) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;listaPossiveisAnimais = intersectList(&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;hashRespostasNaoSei.getAnimals((String) listaPerguntas&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;.get(i)), listaPossiveisAnimais);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;if (listaPossiveisAnimais.size() == 1) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;nomeAnimal = listaPossiveisAnimais.get(0);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;encontrado = true;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;if (nomeAnimal != null) {&#xD;&#xA;&#x9;&#x9;&#x9;acertei = responder.finalAnswer(nomeAnimal);&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;acertei = responder.finalAnswer(&quot;nao sei&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;if (acertei) {&#xD;&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;Oba! Acertei! - &quot; + nomeAnimal);&#xD;&#xA;&#x9;&#x9;} else {&#xD;&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;fuem! fuem! fuem!&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <interfaceRealization xmi:id="_j4rrAHizEeCYGc5QaNM1Jg" name="pt.c01interfaces.s01chaveid.s01base.inter.IEnquirer" supplier="_j3JZ8nizEeCYGc5QaNM1Jg" client="_j3KBB3izEeCYGc5QaNM1Jg" contract="_j3JZ8nizEeCYGc5QaNM1Jg"/>
+            <ownedOperation xmi:id="_j4_0EHizEeCYGc5QaNM1Jg" name="connect" visibility="public" method="_j5BpQHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j4_0EXizEeCYGc5QaNM1Jg" name="responder" type="_j3Iy53izEeCYGc5QaNM1Jg"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_j3KBCHizEeCYGc5QaNM1Jg" name="AppBase02">
+            <elementImport xmi:id="_j5CQUXizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3JZ8nizEeCYGc5QaNM1Jg"/>
+            <elementImport xmi:id="_j5CQUnizEeCYGc5QaNM1Jg" visibility="private" importedElement="_j3Iy53izEeCYGc5QaNM1Jg"/>
+            <packageImport xmi:id="_j5CQUHizEeCYGc5QaNM1Jg" visibility="private" importedPackage="_j3Iy4XizEeCYGc5QaNM1Jg"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j5EskHizEeCYGc5QaNM1Jg" name="main" specification="_j5EFgHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j5EskXizEeCYGc5QaNM1Jg" name="args" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;&#x9;&#x9;String animalName;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;BaseConhecimento bc = new BaseConhecimento();&#xD;&#xA;&#x9;&#x9;String namesList[] = bc.listaNomes();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;// runs all the animals for the enquirer basic and advanced&#xD;&#xA;&#x9;&#x9;for (int i = 0; i &lt; namesList.length; i++) {&#xD;&#xA;&#x9;&#x9;&#x9;animalName = namesList[i];&#xD;&#xA;&#x9;&#x9;&#x9;System.out.print(&quot;Basic:    &quot;);&#xD;&#xA;&#x9;&#x9;&#x9;enquirerBasicTest(animalName);&#xD;&#xA;&#x9;&#x9;&#x9;System.out.print(&quot;Advanced: &quot;);&#xD;&#xA;&#x9;&#x9;&#x9;enquirerAdvancedTest(animalName);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j5HI0HizEeCYGc5QaNM1Jg" name="enquirerBasicTest" specification="_j5GhwHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j5HI0XizEeCYGc5QaNM1Jg" name="animalName" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;&#x9;&#x9;IEnquirer eb = new EnquirerBasic();&#xD;&#xA;&#x9;&#x9;IResponder rb = new Responder(animalName);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;eb.connect(rb);&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_j5JlEHizEeCYGc5QaNM1Jg" name="enquirerAdvancedTest" specification="_j5I-AHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j5JlEXizEeCYGc5QaNM1Jg" name="animalName" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+              <language>JAVA</language>
+              <body>&#xD;&#xA;&#x9;&#x9;IEnquirer ea = new EnquirerAdvanced();&#xD;&#xA;&#x9;&#x9;IResponder ra = new Responder(animalName);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;ea.connect(ra);&#xD;&#xA;&#x9;</body>
+            </ownedBehavior>
+            <ownedOperation xmi:id="_j5EFgHizEeCYGc5QaNM1Jg" name="main" visibility="public" isStatic="true" method="_j5EskHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j5EFgXizEeCYGc5QaNM1Jg" name="args" type="_j3TK8XizEeCYGc5QaNM1Jg">
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j5EFgnizEeCYGc5QaNM1Jg" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_j5GhwHizEeCYGc5QaNM1Jg" name="enquirerBasicTest" visibility="public" isStatic="true" method="_j5HI0HizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j5GhwXizEeCYGc5QaNM1Jg" name="animalName" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_j5I-AHizEeCYGc5QaNM1Jg" name="enquirerAdvancedTest" visibility="public" isStatic="true" method="_j5JlEHizEeCYGc5QaNM1Jg">
+              <ownedParameter xmi:id="_j5I-AXizEeCYGc5QaNM1Jg" name="animalName" type="_j3TK8XizEeCYGc5QaNM1Jg"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMJHizEeCYGc5QaNM1Jg" supplier="_j3R81nizEeCYGc5QaNM1Jg" client="_j3KBA3izEeCYGc5QaNM1Jg"/>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMJXizEeCYGc5QaNM1Jg" supplier="_j3Iy4XizEeCYGc5QaNM1Jg" client="_j3KBA3izEeCYGc5QaNM1Jg"/>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMJnizEeCYGc5QaNM1Jg" supplier="_j3Iy5XizEeCYGc5QaNM1Jg" client="_j3KBA3izEeCYGc5QaNM1Jg"/>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMJ3izEeCYGc5QaNM1Jg" supplier="_j4rrBHizEeCYGc5QaNM1Jg" client="_j3KBA3izEeCYGc5QaNM1Jg"/>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMKHizEeCYGc5QaNM1Jg" supplier="_j4sSEHizEeCYGc5QaNM1Jg" client="_j3KBA3izEeCYGc5QaNM1Jg"/>
+          <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMKXizEeCYGc5QaNM1Jg" supplier="_j3JZ9HizEeCYGc5QaNM1Jg" client="_j3KBA3izEeCYGc5QaNM1Jg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMIHizEeCYGc5QaNM1Jg" supplier="_j3R81nizEeCYGc5QaNM1Jg" client="_j3JZ9HizEeCYGc5QaNM1Jg"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMIXizEeCYGc5QaNM1Jg" supplier="_j30vZXizEeCYGc5QaNM1Jg" client="_j3JZ9HizEeCYGc5QaNM1Jg"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMInizEeCYGc5QaNM1Jg" supplier="_j30vYHizEeCYGc5QaNM1Jg" client="_j3JZ9HizEeCYGc5QaNM1Jg"/>
+        <packagedElement xmi:type="uml:Usage" xmi:id="_j5KMI3izEeCYGc5QaNM1Jg" supplier="_j4BjsHizEeCYGc5QaNM1Jg" client="_j3JZ9HizEeCYGc5QaNM1Jg"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_j3RVwXizEeCYGc5QaNM1Jg" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_j3RVwnizEeCYGc5QaNM1Jg" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j3RVw3izEeCYGc5QaNM1Jg" name="BufferedReader"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j3R80HizEeCYGc5QaNM1Jg" name="File"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j3R80nizEeCYGc5QaNM1Jg" name="FileReader"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j3R81HizEeCYGc5QaNM1Jg" name="IOException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_j3R81nizEeCYGc5QaNM1Jg" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j3R813izEeCYGc5QaNM1Jg" name="Vector"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j30vY3izEeCYGc5QaNM1Jg" name="List"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j4Bjs3izEeCYGc5QaNM1Jg" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j4BjtXizEeCYGc5QaNM1Jg" name="HashMap"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_j3TK8HizEeCYGc5QaNM1Jg" name="lang">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j3TK8XizEeCYGc5QaNM1Jg" name="String"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_j3pJMHizEeCYGc5QaNM1Jg" name="boolean"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_j3uBsHizEeCYGc5QaNM1Jg" name="int"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_j30IUHizEeCYGc5QaNM1Jg" name="anima">
+    <packagedElement xmi:type="uml:Package" xmi:id="_j30vYHizEeCYGc5QaNM1Jg" name="component">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j30vYXizEeCYGc5QaNM1Jg" name="ISupports"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_j4BjsHizEeCYGc5QaNM1Jg" name="base">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_j4BjsXizEeCYGc5QaNM1Jg" name="ComponentBase"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_j30vZXizEeCYGc5QaNM1Jg" name="annotation">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j30vZnizEeCYGc5QaNM1Jg" name="ComponentInterface"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j4CKwHizEeCYGc5QaNM1Jg" name="Component"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_j4rrBHizEeCYGc5QaNM1Jg" name="factory">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j4rrBXizEeCYGc5QaNM1Jg" name="IGlobalFactory"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_j4rrB3izEeCYGc5QaNM1Jg" name="context">
+        <packagedElement xmi:type="uml:Package" xmi:id="_j4sSEHizEeCYGc5QaNM1Jg" name="componentContext">
+          <packagedElement xmi:type="uml:DataType" xmi:id="_j4sSEXizEeCYGc5QaNM1Jg" name="ComponentContextFactory"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
